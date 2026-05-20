@@ -28,9 +28,12 @@ public class Product {
 
     private String description;
     private String category;
+
+    @NotNull(message = "Price is required")
     @Column(nullable = false)
-    @NotBlank(message = "Product must have Price")
-    @DecimalMin(value ="0.0" ,  inclusive=false, message = "Price Must Be Greater Than Zero")
+    @NotNull(message = "Price is required")
+    @DecimalMin(value = "0.0", inclusive = false,
+            message = "Price Must Be Greater Than Zero")
     private BigDecimal price;
     @NotNull(message = "Stock must be positive value")
     @Min(value = 0,message = "Stock Can not be Negative")

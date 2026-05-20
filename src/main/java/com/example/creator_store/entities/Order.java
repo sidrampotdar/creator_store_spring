@@ -38,6 +38,4 @@ private LocalDateTime createdAt;
         this.createdAt=LocalDateTime.now();
     }
 
-
-
 }
