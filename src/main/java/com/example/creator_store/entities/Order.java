@@ -1,5 +1,6 @@
 package com.example.creator_store.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +29,8 @@ public class Order {
  private BigDecimal totalPrice;
     @Column(nullable = false)
 private String status;
-    @OneToMany(mappedBy = "order" )
+    @OneToMany(mappedBy = "order" , cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<OrderItem> orderItemsList;
     @Column(name = "created_at")
 private LocalDateTime createdAt;
